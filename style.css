@@ -1,0 +1,7 @@
+.done {
+  text-decoration: underline;
+  font-weight: bold;
+}
+.todo-item {
+  cursor: pointer;
+}

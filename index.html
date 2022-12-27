@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO APP</title>
+    <script src="https://code.angularjs.org/snapshot/angular.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="todoService.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="app" ng-app="main" ng-controller="MainController as main">
+      <form action="">
+        <input type="text" ng-model="inputValue" />
+        <button ng-click="addTodo($event)">Add</button>
+      </form>
+      <div class="todo-list">
+        <ul>
+          <li
+            ng-repeat="todo in todoList"
+            class="todo-item"
+            ng-click="toggleDone(todo)"
+          >
+            <span ng-class="{done : todo.isDone}"> {{todo.content}} </span>
+            <button ng-click="removeTodo(todo)">X</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
